@@ -6,5 +6,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   mode: ButtonMode;
   title: string;
   leftIcon?: ReactNode;
-  outlineColor?: string;
+  outlineColor?: "Red" | "Orange" | "Gray";
 }

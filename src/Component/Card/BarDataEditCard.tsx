@@ -24,6 +24,10 @@ export default function BarDataEditCard({
     setIsModalOpen(false);
   }
 
+  function handleDeleteBtnClick() {
+    dispatchBarData({ type: "delete", payload: { id: data.id } });
+  }
+
   return (
     <>
       {isModalOpen && <Modal data={data} onEdit={handleOnEdit} />}
@@ -31,7 +35,15 @@ export default function BarDataEditCard({
         <div>
           <p>X Axis Label : {data.xLabel}</p>
           <p>Y Axis label : {data.yValue}</p>
-          <Button mode="Primary" title="Edit" onClick={handleEditBtnClick} />
+          <div className={`${style.barDataEditCardActions}`}>
+            <Button mode="Primary" title="Edit" onClick={handleEditBtnClick} />
+            <Button
+              mode="Secondary"
+              title="Delete"
+              onClick={handleDeleteBtnClick}
+              outlineColor="Red"
+            />
+          </div>
         </div>
       </div>
     </>

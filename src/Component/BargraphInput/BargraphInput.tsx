@@ -1,7 +1,7 @@
 import style from "./bargraphInput.module.css";
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
-import { BarChartBigIcon } from "lucide-react";
+import { BarChartBigIcon, DeleteIcon } from "lucide-react";
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import type {
   BargraphInputProps,
@@ -48,12 +48,18 @@ const BargraphInput = forwardRef<BarGraphInputRefs, BargraphInputProps>(
             placeholder="Enter value (e.g.,20)"
           />
         </section>
-        <section>
+        <section className={`${style.bargraphInputActions}`}>
           <Button
             mode="Primary"
             title="Generate Chart"
             leftIcon={<BarChartBigIcon />}
             onClick={onGenerate}
+          />
+          <Button
+            leftIcon={<DeleteIcon />}
+            mode="Secondary"
+            title="Delete All"
+            outlineColor="Red"
           />
         </section>
       </div>

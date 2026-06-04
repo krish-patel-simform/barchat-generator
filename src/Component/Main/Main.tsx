@@ -42,8 +42,6 @@ export default function Main() {
     valueRef.value = "";
   }
 
-  // function
-
   return (
     <div className={`${style.mainContainer}`}>
       <section className={`section ${style.mainBargraphInput}`}>

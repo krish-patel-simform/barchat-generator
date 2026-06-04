@@ -35,10 +35,12 @@ export function barDataReducer(
       return [...prefix, editedData, ...sufix];
     }
     case "delete": {
-      return prevState;
+      const id = action.payload.id;
+      const filterBarData = prevState.filter((barData) => barData.id !== id);
+      return filterBarData;
     }
     case "deleteAll": {
-      return prevState;
+      return [];
     }
     default: {
       return prevState;

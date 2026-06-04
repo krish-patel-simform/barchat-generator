@@ -11,3 +11,15 @@
 .btnSecondary {
   @apply bg-(--secondary-bg-color);
 }
+
+.btnOutlineRed {
+  @apply outline outline-red-500 text-red-500;
+}
+
+.btnOutlineOrange {
+  @apply outline outline-orange-500 text-orange-500;
+}
+
+.btnOutlineGray {
+  @apply outline outline-gray-500 text-gray-500;
+}

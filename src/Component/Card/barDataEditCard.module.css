@@ -3,3 +3,7 @@
 .barDataEditCard {
   @apply flex flex-col gap-4 border rounded-(--radius) p-4;
 }
+
+.barDataEditCardActions {
+  @apply flex gap-4 justify-between;
+}
