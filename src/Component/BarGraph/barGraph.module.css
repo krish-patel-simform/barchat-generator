@@ -1,0 +1,17 @@
+@reference 'tailwindcss';
+
+.barGraphContainer{
+    @apply grow flex items-end gap-4;
+}
+
+.bar{
+    @apply w-[5rem] bg-[var(--primary-bg-color)];
+}
+
+.barContainer{
+    @apply flex flex-col;
+}
+
+.barContainerLabel{
+    @apply text-center;
+}
