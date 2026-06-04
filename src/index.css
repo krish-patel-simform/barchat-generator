@@ -1,5 +1,26 @@
+@import "tailwindcss";
 :root {
+  /*Background color */
+
+  --primary-bg-color: #5c64ee;
+  --secondary-bg-color: #f1f3f6;
+
+  /* info or alert */
+  --info-bg-color: #f6f6fe;
+
+  /* outline */
+  --outline-color: #5c64ee;
+
+  /* border radius */
+  --radius: 5px;
 }
 
 #root {
+  height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
