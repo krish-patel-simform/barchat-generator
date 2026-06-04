@@ -1,5 +1,17 @@
 @reference 'tailwindcss';
 
-.bargraphInput{
-    @apply flex flex-col gap-4 ;
+.bargraphInput {
+  @apply flex flex-col gap-4;
+}
+
+.bargraphInputSection {
+  @apply flex flex-col gap-2;
+}
+
+.bargraphInputTitleContainer {
+  @apply flex gap-2;
+}
+
+.heading {
+  @apply font-medium;
 }

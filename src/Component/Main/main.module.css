@@ -1,13 +1,12 @@
 @reference "tailwindcss";
 
-.mainContainer{
-    @apply flex gap-4 ;
+.mainContainer {
+  @apply flex gap-4;
 }
 
-.mainBargraphInput{
-
+.mainBargraphInput {
 }
 
-.mainBarGraph{
-    @apply grow;
+.mainBarGraph {
+  @apply grow;
 }

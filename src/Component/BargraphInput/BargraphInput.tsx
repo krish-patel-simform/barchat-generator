@@ -8,28 +8,45 @@ import type {
   BarGraphInputRefs,
 } from "./barGraphInput.type";
 
+import { BarChart3Icon } from "lucide-react";
+
 const BargraphInput = forwardRef<BarGraphInputRefs, BargraphInputProps>(
   ({ onGenerate }, ref) => {
     const xLabelRef = useRef<HTMLInputElement>(null);
     const yValueRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(ref, () => {
-        return {
-          xLabelRef: xLabelRef.current,
-          yValueRef: yValueRef.current,
-        };
+      return {
+        xLabelRef: xLabelRef.current,
+        yValueRef: yValueRef.current,
+      };
     });
 
     return (
       <div className={`${style.bargraphInput}`}>
-        <p>Enyer Chart Data</p>
-        <section>
-          <h6>X-Axis Labels</h6>
-          <Input ref={xLabelRef} type="text" name="x-axis" />
+        <section
+          className={` ${style.bargraphInputTitleContainer} ${style.heading}`}
+        >
+          <BarChart3Icon />
+          <p>Enter Chart Data</p>
         </section>
-        <section>
-          <h6>Y-Axis Value</h6>
-          <Input ref={yValueRef} type="number" name="y-value" />
+        <section className={`${style.bargraphInputSection}`}>
+          <h6 className={`${style.heading}`}>X-Axis Labels</h6>
+          <Input
+            ref={xLabelRef}
+            type="text"
+            name="x-axis"
+            placeholder="Enter label (e.g.,Jan)"
+          />
+        </section>
+        <section className={`${style.bargraphInputSection}`}>
+          <h6 className={`${style.heading}`}>Y-Axis Value</h6>
+          <Input
+            ref={yValueRef}
+            type="number"
+            name="y-value"
+            placeholder="Enter value (e.g.,20)"
+          />
         </section>
         <section>
           <Button
