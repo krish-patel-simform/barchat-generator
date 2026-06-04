@@ -1,6 +1,7 @@
 export type BarData = {
   xLabel: string;
   yValue: number;
+  id: string;
 };
 
 export type BarDataState = BarData[];
@@ -8,8 +9,9 @@ export type BarDataState = BarData[];
 export const initBarDataState: BarDataState = [];
 
 export type BarDataAction =
-  | { type: "insert"; payload: BarData }
-  | { type: "delete"; payload: number }
+  | { type: "insert"; payload: { newData: BarData } }
+  | { type: "delete"; payload: { id: string } }
+  | { type: "edit"; payload: { editedData: BarData } }
   | { type: "deleteAll" };
 
 export function barDataReducer(
@@ -18,8 +20,19 @@ export function barDataReducer(
 ): BarDataState {
   switch (action.type) {
     case "insert": {
-      const barData = action.payload;
-      return [...prevState, barData];
+      const { newData } = action.payload;
+      return [...prevState, newData];
+    }
+    case "edit": {
+      const { editedData } = action.payload;
+      const editedDataIndex = prevState.findIndex(
+        (barData) => barData.id === editedData.id,
+      );
+
+      const prefix = prevState.slice(0, editedDataIndex);
+      const sufix = prevState.slice(editedDataIndex + 1);
+
+      return [...prefix, editedData, ...sufix];
     }
     case "delete": {
       return prevState;

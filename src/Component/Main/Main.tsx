@@ -8,6 +8,8 @@ import {
   initBarDataState,
   type BarData,
 } from "../../reducer/barDataReducer";
+import BarDataEditor from "../BarDataEditor/BarDataEditor";
+import { nanoid } from "nanoid";
 
 export default function Main() {
   const [barData, dispatchBarData] = useReducer(
@@ -30,14 +32,17 @@ export default function Main() {
       const bardata: BarData = {
         xLabel: label,
         yValue: value,
+        id: nanoid(4),
       };
-      dispatchBarData({ type: "insert", payload: bardata });
+      dispatchBarData({ type: "insert", payload: { newData: bardata } });
     } else {
       alert("Please enter all field");
     }
     labelRef.value = "";
     valueRef.value = "";
   }
+
+  // function
 
   return (
     <div className={`${style.mainContainer}`}>
@@ -46,6 +51,7 @@ export default function Main() {
           onGenerate={handleGenerateBarGarph}
           ref={barGraphInputRefs}
         />
+        <BarDataEditor dispatchBarData={dispatchBarData} data={barData} />
       </section>
       <section className={`section ${style.mainBarGraph}`}>
         <BarGraph data={barData} />
