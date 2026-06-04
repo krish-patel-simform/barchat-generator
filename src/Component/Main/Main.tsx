@@ -32,6 +32,8 @@ export default function Main() {
         yValue: value,
       };
       dispatchBarData({ type: "insert", payload: bardata });
+    } else {
+      alert("Please enter all field");
     }
     labelRef.value = "";
     valueRef.value = "";

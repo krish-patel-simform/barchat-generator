@@ -1,15 +1,15 @@
 @reference 'tailwindcss';
 
 .barGraphContainer {
-  @apply grow flex items-end gap-4;
+  @apply flex items-end gap-4 h-full border-l pl-4;
 }
 
 .bar {
-  @apply w-[5rem] bg-[var(--primary-bg-color)] rounded-tl-[var(--radius)] rounded-tr-[var(--radius)];
+  @apply w-[3rem] bg-[var(--primary-bg-color)] rounded-tl-[var(--radius)] rounded-tr-[var(--radius)];
 }
 
 .barContainer {
-  @apply flex flex-col;
+  @apply flex flex-col h-[100%] justify-end;
 }
 
 .barContainerLabel {

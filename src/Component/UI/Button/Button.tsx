@@ -10,7 +10,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`${outlineColor ? `text-[${outlineColor}] outline-1 outline-[${outlineColor}]` : ""} ${style.btn} ${style[`btn${mode}`]}`}
+      className={`${outlineColor ? `text-[${outlineColor}] outline-[1px] outline-[${outlineColor}]` : ""} ${style.btn} ${style[`btn${mode}`]}`}
       {...rest}
     >
       {LeftIcon}
