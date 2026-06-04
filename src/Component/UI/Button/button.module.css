@@ -1,0 +1,13 @@
+@reference 'tailwindcss';
+
+.btn {
+  @apply flex gap-2 p-4 cursor-pointer rounded-[var(--radius)];
+}
+
+.btnPrimary {
+  @apply bg-[var(--primary-bg-color)] text-white;
+}
+
+.btnSecondary {
+  @apply bg-[var(--secondary-bg-color)];
+}
