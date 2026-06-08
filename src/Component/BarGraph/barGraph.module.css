@@ -5,7 +5,7 @@
 }
 
 .barGraphIntervals {
-  @apply flex flex-col justify-between h-[100%] border-r p-8;
+  @apply flex flex-col justify-between h-full border-r p-8;
 }
 
 /* Bar */
@@ -14,7 +14,7 @@
 }
 
 .bar {
-  @apply relative w-[3rem] bg-[var(--primary-bg-color)] rounded-tl-[var(--radius)] rounded-tr-[var(--radius)] transition-colors duration-300 ease-in-out;
+  @apply relative w-[3rem] bg-(--primary-bg-color) rounded-tl-(--radius) rounded-tr-(--radius) transition-colors duration-300 ease-in-out;
 }
 
 .bar:hover {
@@ -22,7 +22,7 @@
 }
 
 .barContainer {
-  @apply flex flex-col h-[100%] justify-end cursor-pointer items-center gap-2;
+  @apply flex flex-col h-full justify-end cursor-pointer items-center gap-2;
 }
 
 .barContainerValue {
