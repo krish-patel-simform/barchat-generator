@@ -1,21 +1,20 @@
 @reference 'tailwindcss';
 
 .barGraphContainer {
-  @apply flex items-end gap-4 h-full p-4 relative;
+  @apply flex items-end gap-4 h-full pl-2 py-8 pr-2 relative overflow-hidden grow;
 }
 
 .barGraphIntervals {
-  @apply flex flex-col justify-between h-[100%] border-r;
+  @apply flex flex-col justify-between h-[100%] border-r p-8;
 }
 
 /* Bar */
-
 .allBarContainer {
-  @apply h-full flex gap-4;
+  @apply h-full flex gap-4 overflow-x-scroll p-8 scrollbar-thin grow;
 }
 
 .bar {
-  @apply relative w-[3rem] bg-[var(--primary-bg-color)] rounded-tl-[var(--radius)] rounded-tr-[var(--radius)];
+  @apply relative w-[3rem] bg-[var(--primary-bg-color)] rounded-tl-[var(--radius)] rounded-tr-[var(--radius)] transition-colors duration-300 ease-in-out;
 }
 
 .bar:hover {
@@ -31,5 +30,5 @@
 }
 
 .barContainerLabel {
-  @apply absolute text-center truncate w-[3.5rem] bottom-[-1rem];
+  @apply absolute text-center truncate w-[3.5rem] bottom-[-1.5rem];
 }

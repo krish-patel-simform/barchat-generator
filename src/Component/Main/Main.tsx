@@ -51,9 +51,8 @@ export default function Main() {
         />
         <BarDataEditor dispatchBarData={dispatchBarData} data={barData} />
       </section>
-      <section className={`section ${style.mainBarGraph}`}>
-        <BarGraph data={barData} />
-      </section>
+
+      <BarGraph data={barData} />
     </div>
   );
 }

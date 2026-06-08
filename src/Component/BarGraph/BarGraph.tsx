@@ -14,12 +14,12 @@ export default function BarGraph({ data }: BarGraphProps) {
   ).reverse();
 
   return (
-    <section className={`${style.barGraphContainer}`}>
+    <section className={`section ${style.barGraphContainer}`}>
       <div className={`${style.barGraphIntervals}`}>
         {maxValue === Number.NEGATIVE_INFINITY
           ? null
           : intervals.map((interval) => {
-              return <span>{interval} -</span>;
+              return <span>{`${interval}-`}</span>;
             })}
       </div>
       <div className={`${style.allBarContainer}`}>
@@ -46,8 +46,8 @@ const Bar = ({ xLabel, height, yValue }: BarProps) => {
     <section className={`${style.barContainer}`}>
       <div style={{ height: `${height}%` }} className={`${style.bar}`}>
         <span className={`${style.barContainerValue}`}>{yValue}</span>
+        <span className={`${style.barContainerLabel}`}>{xLabel}</span>
       </div>
-      <span className={`${style.barContainerLabel}`}>{xLabel}</span>
     </section>
   );
 };

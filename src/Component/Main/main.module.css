@@ -9,5 +9,5 @@
 }
 
 .mainBarGraph {
-  @apply grow;
+  @apply grow overflow-hidden;
 }
