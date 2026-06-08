@@ -5,7 +5,7 @@
 }
 
 .mainBargraphInput {
-  @apply overflow-scroll flex flex-col gap-4;
+  @apply flex flex-col gap-4;
 }
 
 .mainBarGraph {

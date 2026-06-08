@@ -8,9 +8,10 @@ import Button from "../UI/Button/Button";
 type ModalProps = {
   data: BarData;
   onEdit: (editedData: BarData) => void;
+  onCancle: () => void;
 };
 
-export default function Modal({ data, onEdit }: ModalProps) {
+export default function Modal({ data, onEdit, onCancle }: ModalProps) {
   const { xLabel, yValue } = data;
 
   function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
@@ -43,18 +44,27 @@ export default function Modal({ data, onEdit }: ModalProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`${style.modal}`}>
-      <div>
-        <p>X-Axis</p>
-        <Input type="text" name="xLabel" defaultValue={xLabel} />
-      </div>
-      <div>
-        <p>Y-Value</p>
-        <Input type="number" name="yValue" defaultValue={yValue} />
-      </div>
-      <div>
-        <Button mode="Primary" title="Save" type="submit" />
-      </div>
-    </form>
+    <div className={`${style.modalContainer}`}>
+      <form onSubmit={handleSubmit} className={`${style.modal}`}>
+        <h1>Edit Chart</h1>
+        <div>
+          <p>X-Axis</p>
+          <Input type="text" name="xLabel" defaultValue={xLabel} />
+        </div>
+        <div>
+          <p>Y-Value</p>
+          <Input type="number" name="yValue" defaultValue={yValue} />
+        </div>
+        <div className={`${style.modalActions}`}>
+          <Button mode="Primary" title="Save" type="submit" />
+          <Button
+            mode="Secondary"
+            title="Cancle"
+            outlineColor="Gray"
+            onClick={onCancle}
+          />
+        </div>
+      </form>
+    </div>
   );
 }

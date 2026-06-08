@@ -1,15 +1,17 @@
 import style from "./barDataEditCard.module.css";
-import Button from "../UI/Button/Button";
 import type { BarData, BarDataAction } from "../../reducer/barDataReducer";
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
+import { EditIcon, Trash2 } from "lucide-react";
 
 type BarDataEditCardProps = {
   data: BarData;
   dispatchBarData: React.Dispatch<BarDataAction>;
+  index: number;
 };
 
 export default function BarDataEditCard({
+  index,
   data,
   dispatchBarData,
 }: BarDataEditCardProps) {
@@ -28,22 +30,34 @@ export default function BarDataEditCard({
     dispatchBarData({ type: "delete", payload: { id: data.id } });
   }
 
+  function handleOnCancle() {
+    setIsModalOpen(false);
+  }
+
   return (
     <>
-      {isModalOpen && <Modal data={data} onEdit={handleOnEdit} />}
+      {isModalOpen && (
+        <Modal data={data} onCancle={handleOnCancle} onEdit={handleOnEdit} />
+      )}
       <div className={`${style.barDataEditCard}`}>
+        <div className={`${style.flexSection}`}>
+          <p className={`${style.barDataEditCardId}`}>{index + 1}</p>
+          <p>{data.xLabel}</p>
+        </div>
         <div>
-          <p>X Axis Label : {data.xLabel}</p>
-          <p>Y Axis label : {data.yValue}</p>
-          <div className={`${style.barDataEditCardActions}`}>
-            <Button mode="Primary" title="Edit" onClick={handleEditBtnClick} />
-            <Button
-              mode="Secondary"
-              title="Delete"
-              onClick={handleDeleteBtnClick}
-              outlineColor="Red"
-            />
-          </div>
+          <p>{data.yValue}</p>
+        </div>
+        <div className={`${style.barDataEditCardActions}`}>
+          <EditIcon
+            className={`${style.barEditCardIcons}`}
+            color="#5c64ee"
+            onClick={handleEditBtnClick}
+          />
+          <Trash2
+            className={`${style.barEditCardIcons}`}
+            color="red"
+            onClick={handleDeleteBtnClick}
+          />
         </div>
       </div>
     </>

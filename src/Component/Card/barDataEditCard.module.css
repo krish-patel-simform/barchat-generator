@@ -1,9 +1,21 @@
 @reference 'tailwindcss';
 
 .barDataEditCard {
-  @apply flex flex-col gap-4 border rounded-(--radius) p-4;
+  @apply flex gap-4 justify-between border items-center border-gray-300 rounded-(--radius) p-4 shadow-md;
+}
+
+.barDataEditCardId {
+  @apply bg-[#e2e4ed] p-[0.2rem] h-[30px] aspect-square rounded-[50%] flex items-center justify-center;
 }
 
 .barDataEditCardActions {
   @apply flex gap-4 justify-between;
+}
+
+.flexSection {
+  @apply flex gap-2 items-center;
+}
+
+.barEditCardIcons {
+  @apply cursor-pointer;
 }

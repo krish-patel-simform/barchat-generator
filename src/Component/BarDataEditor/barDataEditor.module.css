@@ -1,5 +1,13 @@
 @reference 'tailwindcss';
 
 .barDataEditorContainer {
-  @apply flex flex-col gap-2 overflow-scroll;
+  @apply flex flex-col gap-2 overflow-scroll p-4 grow;
+}
+
+.barDataEditCardHeader {
+  @apply flex gap-4 justify-between items-center;
+}
+
+.barDataEditCardHeadering {
+  @apply text-[1rem];
 }
