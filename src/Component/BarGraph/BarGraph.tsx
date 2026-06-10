@@ -8,9 +8,13 @@ export default function BarGraph({ data }: BarGraphProps) {
     Number.NEGATIVE_INFINITY,
   );
 
-  const gap = Math.ceil(maxValue / 10);
+  const gap = maxValue / 10;
+
+  console.log("Gap : ", gap);
+  console.log(maxValue / 10);
+
   const intervals = Array.from({ length: 11 }, (_, index) =>
-    index === 10 ? maxValue : gap * index,
+    index === 10 ? maxValue : (gap * index).toFixed(2),
   ).reverse();
 
   return (
