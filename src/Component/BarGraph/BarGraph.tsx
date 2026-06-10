@@ -22,13 +22,14 @@ export default function BarGraph({ data }: BarGraphProps) {
       <div className={`${style.barGraphIntervals}`}>
         {maxValue === Number.NEGATIVE_INFINITY
           ? null
-          : intervals.map((interval) => {
-              return <span>{`${interval}-`}</span>;
+          : intervals.map((interval, index) => {
+              return <span key={index}>{`${interval}-`}</span>;
             })}
       </div>
       <div className={`${style.allBarContainer}`}>
         {data.map((obj) => {
           const height = (obj.yValue / maxValue) * MAX_BAR_HEIGHT;
+          console.log(obj.id);
           return (
             <Bar
               key={obj.id}
