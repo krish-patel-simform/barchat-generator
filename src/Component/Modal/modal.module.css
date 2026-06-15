@@ -1,7 +1,7 @@
 @reference 'tailwindcss';
 
 .modalContainer {
-  @apply absolute flex items-center justify-center inset-0 backdrop-blur-xs;
+  @apply absolute flex items-center justify-center inset-0 backdrop-blur-xs z-10;
 }
 
 .modal {
