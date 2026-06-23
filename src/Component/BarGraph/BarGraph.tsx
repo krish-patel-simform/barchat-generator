@@ -20,11 +20,10 @@ export default function BarGraph({ data }: BarGraphProps) {
   return (
     <section className={`section ${style.barGraphContainer}`}>
       <div className={`${style.barGraphIntervals}`}>
-        {maxValue === Number.NEGATIVE_INFINITY
-          ? null
-          : intervals.map((interval, index) => {
-              return <span key={index}>{`${interval}-`}</span>;
-            })}
+        {maxValue !== Number.NEGATIVE_INFINITY &&
+          intervals.map((interval, index) => {
+            return <span key={index}>{`${interval}-`}</span>;
+          })}
       </div>
       <div className={`${style.allBarContainer}`}>
         {data.map((obj) => {

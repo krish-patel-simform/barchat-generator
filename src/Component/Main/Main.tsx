@@ -28,18 +28,22 @@ export default function Main() {
     const label = labelRef.value;
     const value = Number(valueRef.value);
 
-    if (label && value) {
+    if (!label) {
+      alert("Please Enter X label");
+      return;
+    } else if (value < 0) {
+      alert("Please enter positive data");
+      return;
+    } else {
       const bardata: BarData = {
         xLabel: label,
         yValue: value,
         id: nanoid(4),
       };
       dispatchBarData({ type: "insert", payload: { newData: bardata } });
-    } else {
-      alert("Please enter all field");
+      labelRef.value = "";
+      valueRef.value = "";
     }
-    labelRef.value = "";
-    valueRef.value = "";
   }
 
   return (

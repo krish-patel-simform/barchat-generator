@@ -25,14 +25,9 @@ export function barDataReducer(
     }
     case "edit": {
       const { editedData } = action.payload;
-      const editedDataIndex = prevState.findIndex(
-        (barData) => barData.id === editedData.id,
+      return prevState.map((entry) =>
+        entry.id === editedData.id ? editedData : entry,
       );
-
-      const prefix = prevState.slice(0, editedDataIndex);
-      const sufix = prevState.slice(editedDataIndex + 1);
-
-      return [...prefix, editedData, ...sufix];
     }
     case "delete": {
       const id = action.payload.id;
