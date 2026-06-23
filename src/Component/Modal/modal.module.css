@@ -1,0 +1,13 @@
+@reference 'tailwindcss';
+
+.modalContainer {
+  @apply absolute flex items-center justify-center inset-0 backdrop-blur-xs z-10;
+}
+
+.modal {
+  @apply absolute flex flex-col border p-4 rounded-(--radius)  gap-4 bg-(--app-bg);
+}
+
+.modalActions {
+  @apply flex justify-between;
+}

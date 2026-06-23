@@ -1,5 +1,49 @@
+@import "tailwindcss";
 :root {
+  /*Background color */
+
+  --primary-bg-color: #5c64ee;
+  --secondary-bg-color: white;
+  --app-bg: #f5f6fe;
+  --section-bg: #fffffd;
+
+  /* info or alert */
+  --info-bg-color: #f6f6fe;
+
+  /* outline */
+  --outline-color: #5c64ee;
+
+  /* border radius */
+  --radius: 5px;
+
+  /* text color */
+  --secondary-text-color: #8a93a3;
+
+  /* units */
+  --rem-half: 0.5rem;
+  --rem-1: 1rem;
+  --rem-2: 2rem;
+  --rem-3: 3rem;
 }
 
 #root {
+  position: relative;
+  height: 100vh;
+  background-color: var(--app-bg);
+  display: flex;
+  flex-direction: column;
+  padding: var(--rem-1);
+  gap: var(--rem-1);
+}
+
+.section {
+  background-color: var(--secondary-bg-color);
+  border: var(--radius);
+  padding: var(--rem-1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }

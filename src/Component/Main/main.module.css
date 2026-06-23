@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.mainContainer {
+  @apply flex gap-4 grow overflow-hidden;
+}
+
+.mainBargraphInput {
+  @apply flex flex-col gap-4;
+}
+
+.mainBarGraph {
+  @apply grow overflow-hidden;
+}

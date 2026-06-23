@@ -1,0 +1,23 @@
+@reference 'tailwindcss';
+
+.header {
+  @apply flex p-4 justify-between;
+}
+
+.headerLeft {
+  @apply flex;
+}
+
+.headerLeftLogo {
+}
+
+.headerRight {
+}
+
+.headerHeading {
+  @apply font-semibold text-2xl;
+}
+
+.headerSecondary {
+  @apply text-(--secondary-text-color);
+}
